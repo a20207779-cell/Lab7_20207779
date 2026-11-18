@@ -8,83 +8,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrar sesión"
-            android:textSize="26sp"
+            android:text="Estadísticas de Estudio"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#243B53"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="12dp" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Curso"
-            android:textStyle="bold"/>
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
 
-        <EditText
-            android:id="@+id/etCurso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ej. Teoría de Comunicaciones 2"
-            android:inputType="textCapSentences"/>
+            <Spinner
+                android:id="@+id/spFiltroCurso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fecha"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"/>
+            <Button
+                android:id="@+id/btnEvaluarAvance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Evaluar mi avance"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/etFecha"
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/graficoBarras"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="DD/MM/AAAA"
-            android:focusable="false"
-            android:clickable="true"/>
+            android:layout_height="260dp"
+            android:layout_marginBottom="20dp" />
 
-        <TextView
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/graficoCircular"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Horas dedicadas"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/etHoras"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ej. 2.5"
-            android:inputType="numberDecimal"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tipo de actividad"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"/>
-
-        <Spinner
-            android:id="@+id/spActividad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/btnGuardarSesion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Guardar sesión"
-            android:layout_marginTop="28dp"/>
-
-        <Button
-            android:id="@+id/btnCancelar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cancelar"/>
+            android:layout_height="260dp" />
 
     </LinearLayout>
 </ScrollView>
